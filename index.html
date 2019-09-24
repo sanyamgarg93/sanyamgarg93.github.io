@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <link rel="icon" type="image/png" href="/favicon.png">
@@ -58,33 +59,43 @@
           }
         };
 
+        googletag.cmd.push(function() {
+            googletag.pubads().disableInitialLoad();
+        });
+
         pbjs.que.push(function() {
             pbjs.addAdUnits(adUnits);
             pbjs.requestBids({
-                adUnitCodes: ['div-gpt-ad-1'],
-                bidsBackHandler: sendAdserverRequest
+                bidsBackHandler: initAdserver,
+                timeout: PREBID_TIMEOUT
             });
         });
 
-        function sendAdserverRequest() {
-            if (pbjs.adserverRequestSent) return;
-            pbjs.adserverRequestSent = true;
+        function initAdserver() {
+            if (pbjs.initAdserverSet) return;
+            pbjs.initAdserverSet = true;
             googletag.cmd.push(function() {
                 pbjs.que.push(function() {
                     pbjs.setTargetingForGPTAsync();
-                    googletag.pubads().refresh([slot1]);
-                });});};
+                    googletag.pubads().refresh();
+                });
+            });
+        }
 
+        // in case PBJS doesn't load
         setTimeout(function() {
-            sendAdserverRequest();
-        }, PREBID_TIMEOUT);
+            initAdserver();
+        }, FAILSAFE_TIMEOUT);
 
-        var slot1, slot2;
         googletag.cmd.push(function() {
-          slot1 = googletag.defineSlot('/1234567/header_bidding', [300, 250], 'div-gpt-ad-1').addService(googletag.pubads());
-          slot2 = googletag.defineSlot('/1234567/header_bidding', [301, 250], 'div-gpt-ad-2').addService(googletag.pubads());
-          googletag.pubads().disableInitialLoad();
-          googletag.enableServices();
+            googletag.defineSlot('div-gpt-ad-1', [[300, 250]], 'div-1').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+        googletag.cmd.push(function() {
+            googletag.defineSlot('div-gpt-ad-1', [[300, 250]], 'div-2').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
         });
 
     </script>
@@ -119,19 +130,19 @@
     <br><br><br>
 
     <h4>- Slot 1 - 300x250 -</h4>
-    <div id='div-gpt-ad-1' style='height:250px; width:300px;'>
+    <div id='div-1' style='height:250px; width:300px;'>
       <script>
         googletag.cmd.push(function() {
-          googletag.display('div-gpt-ad-1');
+          googletag.display('div-1');
         });
       </script>
     </div>
 
     <h4>- Slot 2 - 300x250 -</h4>
-    <div id='div-gpt-ad-2' style='height:250px; width:300px;'>
+    <div id='div-2' style='height:250px; width:300px;'>
       <script>
         googletag.cmd.push(function() {
-          googletag.display('div-gpt-ad-2');
+          googletag.display('div-2');
         });
       </script>
     </div>

@@ -1,99 +1,97 @@
 <html>
   <head>
     <link rel="icon" type="image/png" href="/favicon.png">
-      <script async src="//www.googletagservices.com/tag/js/gpt.js"></script>
-      <script async src="prebid.js"></script>
-      <script>
-          var PREBID_TIMEOUT = 1000;
-          var FAILSAFE_TIMEOUT = 3000;
+    <script async src="//www.googletagservices.com/tag/js/gpt.js"></script>
+    <script async src="prebid.js"></script>
+    <script>
+        var PREBID_TIMEOUT = 1000;
+        var FAILSAFE_TIMEOUT = 3000;
 
-          var adUnits = [{
-              code: 'div-gpt-ad-1',
-              sizes: [[300, 250],
-              bids: [{
-                  bidder: 'audienceNetwork',
-                  params: {
-                     placementId: '2354122411472512_2448966658654753'
-                  }
-              }]
-          },{
-              code: 'div-gpt-ad-2',
-              sizes: [[300, 250]],
-              bids: [{
-                  bidder: 'audienceNetwork',
-                  params: {
-                     placementId: '2354122411472512_2448966658654753',
-                  }
-              }]
-          }];
-
-          var pbjs = pbjs || {};
-          pbjs.que = pbjs.que || [];
-
-          var googletag = googletag || {};
-          googletag.cmd = googletag.cmd || [];
-
-          pbjs.bidderSettings = {
-            standard: {
-              adserverTargeting: [
-                {
-                  key: "hb_bidder",
-                  val: function (bidResponse) {
-                      return bidResponse.bidderCode;
-                  }
-                },
-                {
-                  key: "hb_adid",
-                  val: function (bidResponse) {
-                      return bidResponse.adId;
-                  }
-                },
-                {
-                  key: "hb_pb",
-                  val: function (bidResponse) {
-                      return '20.00';
-                  }
+        var adUnits = [{
+            code: 'div-gpt-ad-1',
+            sizes: [[300, 250]],
+            bids: [{
+                bidder: 'audienceNetwork',
+                params: {
+                   placementId: '2354122411472512_2448966658654753'
                 }
-              ]
-            }
-          };
+            }]
+        },{
+            code: 'div-gpt-ad-2',
+            sizes: [[300, 250]],
+            bids: [{
+                bidder: 'audienceNetwork',
+                params: {
+                   placementId: '2354122411472512_2448966658654753',
+                }
+            }]
+        }];
 
-          pbjs.que.push(function() {
-              pbjs.addAdUnits(adUnits);
-              pbjs.requestBids({
-                  adUnitCodes: ['div-gpt-ad-1'],
-                  bidsBackHandler: sendAdserverRequest
-              });
-          });
+        var pbjs = pbjs || {};
+        pbjs.que = pbjs.que || [];
 
-          function sendAdserverRequest() {
-              if (pbjs.adserverRequestSent) return;
-              pbjs.adserverRequestSent = true;
-              googletag.cmd.push(function() {
-                  pbjs.que.push(function() {
-                      pbjs.setTargetingForGPTAsync();
-                      googletag.pubads().refresh([slot1]);
-                  });});};
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
 
-          setTimeout(function() {
-              sendAdserverRequest();
-          }, PREBID_TIMEOUT);
+        pbjs.bidderSettings = {
+          standard: {
+            adserverTargeting: [
+              {
+                key: "hb_bidder",
+                val: function (bidResponse) {
+                    return bidResponse.bidderCode;
+                }
+              },
+              {
+                key: "hb_adid",
+                val: function (bidResponse) {
+                    return bidResponse.adId;
+                }
+              },
+              {
+                key: "hb_pb",
+                val: function (bidResponse) {
+                    return '20.00';
+                }
+              }
+            ]
+          }
+        };
 
-          var slot1, slot2;
-          googletag.cmd.push(function() {
-            slot1 = googletag.defineSlot('/1234567/header_bidding', [300, 250], 'div-gpt-ad-1').addService(googletag.pubads());
-            slot2 = googletag.defineSlot('/1234567/header_bidding', [301, 250], 'div-gpt-ad-2').addService(googletag.pubads());
-            googletag.pubads().disableInitialLoad();
-            googletag.enableServices();
-          });
+        pbjs.que.push(function() {
+            pbjs.addAdUnits(adUnits);
+            pbjs.requestBids({
+                adUnitCodes: ['div-gpt-ad-1'],
+                bidsBackHandler: sendAdserverRequest
+            });
+        });
 
-      </script>
+        function sendAdserverRequest() {
+            if (pbjs.adserverRequestSent) return;
+            pbjs.adserverRequestSent = true;
+            googletag.cmd.push(function() {
+                pbjs.que.push(function() {
+                    pbjs.setTargetingForGPTAsync();
+                    googletag.pubads().refresh([slot1]);
+                });});};
+
+        setTimeout(function() {
+            sendAdserverRequest();
+        }, PREBID_TIMEOUT);
+
+        var slot1, slot2;
+        googletag.cmd.push(function() {
+          slot1 = googletag.defineSlot('/1234567/header_bidding', [300, 250], 'div-gpt-ad-1').addService(googletag.pubads());
+          slot2 = googletag.defineSlot('/1234567/header_bidding', [301, 250], 'div-gpt-ad-2').addService(googletag.pubads());
+          googletag.pubads().disableInitialLoad();
+          googletag.enableServices();
+        });
+
+    </script>
   </head>
 
   <body>
-    <div>
-      <h1>Medium Rectangle Direct Call</h1>
-    </div>
+    <h1>Medium Rectangle Direct Call</h1>
     <div style="display:none;">
       <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
       <script type="text/javascript">
@@ -111,33 +109,7 @@
           },
           onAdError: function(errorCode, errorMessage) {
             console.log('Audience Network error (' + errorCode + ') ' + errorMessage);
-           [PASSBACK_CODE]
-          }
-        });
-      </script>
-    </div>
-    <div>
-      <br><br>
-      <h1>Native Direct Call</h1>
-    </div>
-    <div style="display:none;">
-      <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
-      <script type="text/javascript">
-        window.ADNW = window.ADNW || {};
-        window.ADNW.v60 = window.ADNW.v60 || {};
-        window.ADNW.v60.slots = window.ADNW.v60.slots || [];
-        window.ADNW.v60.slots.push({
-          rootElement: document.currentScript.parentElement,
-          placementid: '2354122411472512_2448972421987510',
-          format: 'native',
-          testmode: false,
-          onAdLoaded: function(rootElement) {
-            console.log('Audience Network ad loaded');
-            rootElement.style.display = 'block';
-          },
-          onAdError: function(errorCode, errorMessage) {
-            console.log('Audience Network error (' + errorCode + ') ' + errorMessage);
-           [PASSBACK_CODE]
+            [PASSBACK_CODE]
           }
         });
       </script>
@@ -147,21 +119,21 @@
     <br><br><br>
 
     <h4>- Slot 1 - 300x250 -</h4>
-    <div class="adSlot1" style='height:250px; width:300px;'>
-      <div id='div-gpt-ad-1' style='height:250px; width:300px;'>
-        <script>
-          googletag.cmd.push(function() { googletag.display('div-gpt-ad-1'); });
-        </script>
-      </div>
+    <div id='div-gpt-ad-1' style='height:250px; width:300px;'>
+      <script>
+        googletag.cmd.push(function() {
+          googletag.display('div-gpt-ad-1');
+        });
+      </script>
     </div>
 
     <h4>- Slot 2 - 300x250 -</h4>
-    <div class="adSlot2" style='height:250px; width:300px;'>
-      <div id='div-gpt-ad-2' style='height:250px; width:300px;'>
-        <script>
-          googletag.cmd.push(function() { googletag.display('div-gpt-ad-2'); });
-        </script>
-      </div>
+    <div id='div-gpt-ad-2' style='height:250px; width:300px;'>
+      <script>
+        googletag.cmd.push(function() {
+          googletag.display('div-gpt-ad-2');
+        });
+      </script>
     </div>
 
   </body>

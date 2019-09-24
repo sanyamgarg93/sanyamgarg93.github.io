@@ -1,7 +1,7 @@
 <html>
   <body>
     <div>
-      <h1>Hello World!</h1>
+      <h1>Medium Rectangle</h1>
     </div>
     <div style="display:none;">
       <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
@@ -13,6 +13,32 @@
           rootElement: document.currentScript.parentElement,
           placementid: '2354122411472512_2448966658654753',
           format: '300x250',
+          testmode: false,
+          onAdLoaded: function(rootElement) {
+            console.log('Audience Network ad loaded');
+            rootElement.style.display = 'block';
+          },
+          onAdError: function(errorCode, errorMessage) {
+            console.log('Audience Network error (' + errorCode + ') ' + errorMessage);
+           [PASSBACK_CODE]
+          }
+        });
+      </script>
+    </div>
+    <div>
+      <br><br>
+      <h1>Native</h1>
+    </div>
+    <div style="display:none;">
+      <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
+      <script type="text/javascript">
+        window.ADNW = window.ADNW || {};
+        window.ADNW.v60 = window.ADNW.v60 || {};
+        window.ADNW.v60.slots = window.ADNW.v60.slots || [];
+        window.ADNW.v60.slots.push({
+          rootElement: document.currentScript.parentElement,
+          placementid: '2354122411472512_2448972421987510',
+          format: 'native',
           testmode: false,
           onAdLoaded: function(rootElement) {
             console.log('Audience Network ad loaded');

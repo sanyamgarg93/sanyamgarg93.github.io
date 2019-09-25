@@ -16,25 +16,36 @@
             var PREBID_TIMEOUT = 1000;
             var FAILSAFE_TIMEOUT = 3000;
 
-            var adUnits = [{
-                code: 'div-gpt-ad-1',
-                sizes: [[300, 250]],
-                bids: [{
-                    bidder: 'audienceNetwork',
-                    params: {
-                       placementId: '2354122411472512_2448966658654753'
-                    }
-                }]
-            },{
-                code: 'div-gpt-ad-2',
-                sizes: [[300, 250]],
-                bids: [{
-                    bidder: 'audienceNetwork',
-                    params: {
-                       placementId: '2354122411472512_2448966658654753',
-                    }
-                }]
-            }];
+            var adUnits = [
+                {
+                    code: '/19968336/header-bid-tag-0',
+                    mediaTypes: {
+                        banner: {
+                            sizes: div_1_sizes
+                        }
+                    },
+                    bids: [{
+                        bidder: 'appnexus',
+                        params: {
+                            placementId: 13144370
+                        }
+                    }]
+                },
+                {
+                    code: '/19968336/header-bid-tag-1',
+                    mediaTypes: {
+                        banner: {
+                            sizes: div_2_sizes
+                        }
+                    },
+                    bids: [{
+                        bidder: 'appnexus',
+                        params: {
+                            placementId: 13144370
+                        }
+                    }]
+                }
+            ];
 
             // ======== DO NOT EDIT BELOW THIS LINE =========== //
             var googletag = googletag || {};
@@ -70,12 +81,12 @@
             }, FAILSAFE_TIMEOUT);
 
             googletag.cmd.push(function() {
-                googletag.defineSlot('div-gpt-ad-1', [[300, 250]], 'div-1').addService(googletag.pubads());
+                googletag.defineSlot('/19968336/header-bid-tag-0', div_1_sizes, 'div-1').addService(googletag.pubads());
                 googletag.pubads().enableSingleRequest();
                 googletag.enableServices();
             });
             googletag.cmd.push(function() {
-                googletag.defineSlot('div-gpt-ad-2', [[300, 250]], 'div-2').addService(googletag.pubads());
+                googletag.defineSlot('/19968336/header-bid-tag-1', div_2_sizes, 'div-2').addService(googletag.pubads());
                 googletag.pubads().enableSingleRequest();
                 googletag.enableServices();
             });
@@ -92,6 +103,7 @@
                 googletag.cmd.push(function() {
                     googletag.display('div-1');
                 });
+
             </script>
         </div>
 
@@ -103,6 +115,7 @@
                 googletag.cmd.push(function() {
                     googletag.display('div-2');
                 });
+
             </script>
         </div>
 

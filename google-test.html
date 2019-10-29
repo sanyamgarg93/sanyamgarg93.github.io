@@ -12,58 +12,61 @@
     var FAILSAFE_TIMEOUT = 3000;
 
     var adUnits = [
+      {
+        code: '/124141061/prebid-test-rect-top',
+        mediaTypes: {
+          banner: {
+            sizes: sizes
+          }
+        },
+        bids: [{
+          bidder: 'appnexus',
+          params: {
+            placementId: 13144370
+          }
+        },
         {
-            code: '/124141061/prebid-test-rect-top',
-            mediaTypes: {
-                banner: {
-                    sizes: sizes
-                }
-            },
-            bids: [{
-                bidder: 'appnexus',
-                params: {
-                    placementId: 13144370
-                }
-            },
-            {
-                bidder: 'audienceNetwork',
-                params: {
-                    placementId: '2354122411472512_2454847858066633',
-                    format: '300x250'
-                }
-            }]
-        }
+          bidder: 'audienceNetwork',
+          params: {
+            placementId: '2354122411472512_2454847858066633',
+            format: '300x250'
+          }
+        }]
+      }
     ];
 
     window.googletag = window.googletag || {cmd: []};
     googletag.cmd.push(function() {
-        googletag.pubads().disableInitialLoad();
+      googletag.pubads().disableInitialLoad();
     });
 
     var pbjs = pbjs || {};
     pbjs.que = pbjs.que || [];
 
     pbjs.que.push(function() {
-        pbjs.addAdUnits(adUnits);
-        pbjs.requestBids({
-            bidsBackHandler: initAdserver,
-            timeout: PREBID_TIMEOUT
-        });
+      pbjs.setConfig({
+        enableSendAllBids: false
+      })
+      pbjs.addAdUnits(adUnits);
+      pbjs.requestBids({
+        bidsBackHandler: initAdserver,
+        timeout: PREBID_TIMEOUT
+      });
     });
 
     function initAdserver() {
-        if (pbjs.initAdserverSet) return;
-        pbjs.initAdserverSet = true;
-        googletag.cmd.push(function() {
-            pbjs.que.push(function() {
-                pbjs.setTargetingForGPTAsync();
-                googletag.pubads().refresh();
-            });
+      if (pbjs.initAdserverSet) return;
+      pbjs.initAdserverSet = true;
+      googletag.cmd.push(function() {
+        pbjs.que.push(function() {
+          pbjs.setTargetingForGPTAsync();
+          googletag.pubads().refresh();
         });
+      });
     }
     // in case PBJS doesn't load
     setTimeout(function() {
-        initAdserver();
+      initAdserver();
     }, FAILSAFE_TIMEOUT);
 
     googletag.cmd.push(function() {

@@ -8,8 +8,8 @@
     var sizes = [
         [300, 250]
     ];
-    var PREBID_TIMEOUT = 1000;
-    var FAILSAFE_TIMEOUT = 3000;
+    var PREBID_TIMEOUT = 5000;
+    var FAILSAFE_TIMEOUT = 5000;
 
     var adUnits = [
       {
@@ -46,7 +46,7 @@
     pbjs.que.push(function() {
       pbjs.setConfig({
         enableSendAllBids: false
-      })
+      });
       pbjs.addAdUnits(adUnits);
       pbjs.requestBids({
         bidsBackHandler: initAdserver,

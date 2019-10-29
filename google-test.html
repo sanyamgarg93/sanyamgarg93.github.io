@@ -3,8 +3,69 @@
 <head>
   <title>Prebid</title>
   <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+  <script async src="prebid2.37.0.js"></script>
   <script>
+    var sizes = [
+        [300, 250]
+    ];
+    var PREBID_TIMEOUT = 1000;
+    var FAILSAFE_TIMEOUT = 3000;
+
+    var adUnits = [
+        {
+            code: '/124141061/prebid-test-rect-top',
+            mediaTypes: {
+                banner: {
+                    sizes: sizes
+                }
+            },
+            bids: [{
+                bidder: 'appnexus',
+                params: {
+                    placementId: 13144370
+                }
+            },
+            {
+                bidder: 'audienceNetwork',
+                params: {
+                    placementId: '992677654419383_1005484613138687',
+                    format: '300x250'
+                }
+            }]
+        }
+    ];
+
     window.googletag = window.googletag || {cmd: []};
+    googletag.cmd.push(function() {
+        googletag.pubads().disableInitialLoad();
+    });
+
+    var pbjs = pbjs || {};
+    pbjs.que = pbjs.que || [];
+
+    pbjs.que.push(function() {
+        pbjs.addAdUnits(adUnits);
+        pbjs.requestBids({
+            bidsBackHandler: initAdserver,
+            timeout: PREBID_TIMEOUT
+        });
+    });
+
+    function initAdserver() {
+        if (pbjs.initAdserverSet) return;
+        pbjs.initAdserverSet = true;
+        googletag.cmd.push(function() {
+            pbjs.que.push(function() {
+                pbjs.setTargetingForGPTAsync();
+                googletag.pubads().refresh();
+            });
+        });
+    }
+    // in case PBJS doesn't load
+    setTimeout(function() {
+        initAdserver();
+    }, FAILSAFE_TIMEOUT);
+
     googletag.cmd.push(function() {
       googletag.defineSlot('/124141061/prebid-test-rect-top', [300, 250], 'div-gpt-ad-1572287115607-0').addService(googletag.pubads());
       googletag.pubads().enableSingleRequest();
@@ -14,6 +75,8 @@
 </head>
 
 <body>
+  <h2>Basic Prebid.js Example</h2>
+  <h5>Div-1</h5>
   <!-- /124141061/prebid-test-rect-top -->
   <div id='div-gpt-ad-1572287115607-0' style='width: 300px; height: 250px;'>
     <script>

@@ -5,9 +5,7 @@
   <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
   <script async src="prebid2.37.0.js"></script>
   <script>
-    var sizes = [
-        [300,250], [320,50]
-    ];
+
     var PREBID_TIMEOUT = 5000;
     var FAILSAFE_TIMEOUT = 5000;
 
@@ -16,7 +14,7 @@
         code: '/124141061/prebid-test-rect-top',
         mediaTypes: {
           banner: {
-            sizes: sizes
+            sizes: [[300,250]]
           }
         },
         bids: [{
@@ -31,7 +29,7 @@
         code: '/124141061/prebid-test-rect-top',
         mediaTypes: {
           banner: {
-            sizes: sizes
+            sizes: [[320,50]]
           }
         },
         bids: [{
@@ -111,12 +109,12 @@
     }, FAILSAFE_TIMEOUT);
 
     googletag.cmd.push(function() {
-      googletag.defineSlot('/124141061/prebid-test-rect-top', sizes, 'div-1').addService(googletag.pubads());
+      googletag.defineSlot('/124141061/prebid-test-rect-top', [[300,250]], 'div-1').addService(googletag.pubads());
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
     googletag.cmd.push(function() {
-      googletag.defineSlot('/124141061/prebid-test-rect-top', sizes, 'div-2').addService(googletag.pubads());
+      googletag.defineSlot('/124141061/prebid-test-rect-top', [[320,50]], 'div-2').addService(googletag.pubads());
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });

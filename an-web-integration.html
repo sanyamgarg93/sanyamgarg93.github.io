@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
+  <script type="text/javascript" src="https://www.facebook.com/audiencenetwork/proxy/fbadnw60-tag.js?sb=sanyamgarg.sb" async></script>
 </head>
 <body>
   <h2>Webpage showing different integrations of AN on Web</h2>
   <br><br>
 
-  <h3>Full Width Integration</h3>
+  <h3>300x250 Integration</h3>
   <div style="display:none;">
     <script type="text/javascript">
       window.ADNW = window.ADNW || {};
@@ -15,16 +15,39 @@
       window.ADNW.v60.slots = window.ADNW.v60.slots || [];
       window.ADNW.v60.slots.push({
         rootElement: document.currentScript.parentElement,
-        placementid: '2354122411472512_2448966658654753',
+        placementid: '2354122411472512_2484913318393420',
         format: '300x250',
         testmode: false,
         onAdLoaded: function(rootElement) {
-          console.log('Audience Network [2354122411472512_2448966658654753] ad loaded');
+          console.log('Audience Network [2354122411472512_2484913318393420] ad loaded');
           rootElement.style.display = 'block';
         },
         onAdError: function(errorCode, errorMessage) {
-          console.log('Audience Network [2354122411472512_2448966658654753] error (' + errorCode + ') ' + errorMessage);
-          [PASSBACK_CODE]
+          console.log('Audience Network [2354122411472512_2484913318393420] error (' + errorCode + ') ' + errorMessage);
+        }
+      });
+    </script>
+  </div>
+
+  <br>
+
+  <h3>320x50 Integration</h3>
+  <div style="display:none;">
+    <script type="text/javascript">
+      window.ADNW = window.ADNW || {};
+      window.ADNW.v60 = window.ADNW.v60 || {};
+      window.ADNW.v60.slots = window.ADNW.v60.slots || [];
+      window.ADNW.v60.slots.push({
+        rootElement: document.currentScript.parentElement,
+        placementid: '2354122411472512_2484911998393552',
+        format: '320x50',
+        testmode: false,
+        onAdLoaded: function(rootElement) {
+          console.log('Audience Network [2354122411472512_2484911998393552] ad loaded');
+          rootElement.style.display = 'block';
+        },
+        onAdError: function(errorCode, errorMessage) {
+          console.log('Audience Network [2354122411472512_2484911998393552] error (' + errorCode + ') ' + errorMessage);
         }
       });
     </script>

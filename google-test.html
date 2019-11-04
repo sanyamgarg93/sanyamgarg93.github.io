@@ -6,7 +6,7 @@
   <script async src="prebid2.37.0.js"></script>
   <script>
     var sizes = [
-        [300, 250]
+        [300,250], [320,50]
     ];
     var PREBID_TIMEOUT = 5000;
     var FAILSAFE_TIMEOUT = 5000;
@@ -20,16 +20,25 @@
           }
         },
         bids: [{
-          bidder: 'appnexus',
-          params: {
-            placementId: 13144370
-          }
-        },
-        {
           bidder: 'audienceNetwork',
           params: {
-            placementId: '2354122411472512_2454847858066633',
+            placementId: '2354122411472512_2484913318393420', //2354122411472512_2454847858066633
             format: '300x250'
+          }
+        }]
+      },
+      {
+        code: '/124141061/prebid-test-rect-top',
+        mediaTypes: {
+          banner: {
+            sizes: sizes
+          }
+        },
+        bids: [{
+          bidder: 'audienceNetwork',
+          params: {
+            placementId: '2354122411472512_2484911998393552',
+            format: '320x50'
           }
         }]
       }
@@ -54,23 +63,23 @@
         standard: {
           adserverTargeting: [
             {
-                key: "hb_bidder",
-                val: function (bidResponse) {
-                    console.log('Bid Response Bidder Name: ' + bidResponse.bidderCode);
-                    return bidResponse.bidderCode;
-                }
+              key: "hb_bidder",
+              val: function (bidResponse) {
+                  console.log('Bid Response Bidder Name: ' + bidResponse.bidderCode);
+                  return bidResponse.bidderCode;
+              }
             }, {
-                key: "hb_adid",
-                val: function (bidResponse) {
-                    console.log('Bid Response Ad ID: ' + bidResponse.adId);
-                    return bidResponse.adId;
-                }
+              key: "hb_adid",
+              val: function (bidResponse) {
+                  console.log('Bid Response Ad ID: ' + bidResponse.adId);
+                  return bidResponse.adId;
+              }
             }, {
-                key: "hb_pb",
-                val: function (bidResponse) {
-                    console.log('Bid Response Bid Price: ' + bidResponse.pbMg);
-                    return bidResponse.pbMg;
-                }
+              key: "hb_pb",
+              val: function (bidResponse) {
+                  console.log('Bid Response Bid Price: ' + bidResponse.pbMg);
+                  return bidResponse.pbMg;
+              }
             }
           ]
 		    }
@@ -95,13 +104,19 @@
         });
       });
     }
+
     // in case PBJS doesn't load
     setTimeout(function() {
       initAdserver();
     }, FAILSAFE_TIMEOUT);
 
     googletag.cmd.push(function() {
-      googletag.defineSlot('/124141061/prebid-test-rect-top', [300, 250], 'div-gpt-ad-1572287115607-0').addService(googletag.pubads());
+      googletag.defineSlot('/124141061/prebid-test-rect-top', sizes, 'div-1').addService(googletag.pubads());
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+    });
+    googletag.cmd.push(function() {
+      googletag.defineSlot('/124141061/prebid-test-rect-top', sizes, 'div-2').addService(googletag.pubads());
       googletag.pubads().enableSingleRequest();
       googletag.enableServices();
     });
@@ -111,10 +126,18 @@
 <body>
   <h2>Basic Prebid.js Example</h2>
   <h5>Div-1</h5>
-  <!-- /124141061/prebid-test-rect-top -->
-  <div id='div-gpt-ad-1572287115607-0' style='width: 300px; height: 250px;'>
+  <div id='div-1'>
     <script>
-      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1572287115607-0'); });
+      googletag.cmd.push(function() { googletag.display('div-1'); });
+    </script>
+  </div>
+
+  <br>
+
+  <h5>Div-2</h5>
+  <div id='div-2'>
+    <script>
+      googletag.cmd.push(function() { googletag.display('div-2'); });
     </script>
   </div>
 </body>

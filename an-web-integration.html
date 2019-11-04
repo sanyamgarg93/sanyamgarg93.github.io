@@ -54,5 +54,63 @@
     </script>
   </div>
 
+
+  <br>
+
+  <h3>Test Integration 1</h3>
+  <div style="display:none;position:relative;">
+    <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
+    <script type="text/javascript">
+      window.ADNW = window.ADNW || {};
+      window.ADNW.v60 = window.ADNW.v60 || {};
+      window.ADNW.v60.slots = window.ADNW.v60.slots || [];
+      window.ADNW.v60.slots.push({
+        rootElement: document.currentScript.parentElement,
+        placementid: '2354122411472512_2484913318393420',
+        format: '300x250',
+        bidid: '1279976453424501425',
+        testmode: false,
+        onAdLoaded: function(rootElement) {
+          console.log('Audience Network [2354122411472512_2484913318393420] ad loaded');
+          rootElement.style.display = 'block';
+        },
+        onAdError: function(errorCode, errorMessage) {
+          console.log('Audience Network [2354122411472512_2484913318393420] error (' + errorCode + ') ' + errorMessage);
+        }
+      });
+    </script>
+  </div>
+
+
+  <br>
+
+  <h3>Test Integration 2</h3>
+  <body>
+    <div style="display:none;position:relative;">
+      <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
+      <script type="text/javascript">
+        window.ADNW = window.ADNW || {};
+        window.ADNW.v60 = window.ADNW.v60 || {};
+        window.ADNW.v60.slots = window.ADNW.v60.slots || [];
+        window.ADNW.v60.slots.push({
+          rootElement: document.currentScript.parentElement,
+          placementid: '2354122411472512_2484911998393552',
+          format: '320x50',
+          bidid: '3434333395770593969',
+          testmode: false,
+          onAdLoaded: function(rootElement) {
+            console.log('Audience Network [2354122411472512_2484911998393552] ad loaded');
+            rootElement.style.display = 'block';
+          },
+          onAdError: function(errorCode, errorMessage) {
+            console.log('Audience Network [2354122411472512_2484911998393552] error (' + errorCode + ') ' + errorMessage);
+          }
+        });
+      </script>
+
+    </div>
+  </body>
+
+
 </body>
 </html>

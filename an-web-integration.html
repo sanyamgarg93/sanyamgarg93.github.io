@@ -59,13 +59,16 @@
   </style>
   <script>
     window.onload=function(){
+      console.log("start");
       if(parent){
-        console.log("test");
+        console.log("1");
         var o=document.getElementsByTagName("head")[0];
         var s=parent.document.getElementsByTagName("style");
         for(var i=0;i<s.length;i++)
           o.appendChild(s[i].cloneNode(true));
+          console.log("2");
       }
+      console.log("end");
     }
   </script>
 </head>

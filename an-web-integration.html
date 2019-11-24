@@ -1,15 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Test: https://www.facebook.com/audiencenetwork/proxy/fbadnw60-tag.js?sb=sanyamgarg.sb -->
-  <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
+  <style>
+    .thirdPartyRoot {
+      background-color: white;
+      color: #444;
+      border: 1px solid #ccc;
+      border-left: 0;
+      border-right: 0;
+      font-family: sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      width: 320px;
+      text-align: left;
+      position: relative;
+    }
+    .thirdPartyMediaClass {
+      width: 320px;
+      height: 168px;
+      margin: 12px 0;
+    }
+    .thirdPartySubtitleClass {
+      font-size: 18px;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      height: 16px;
+      -webkit-box-orient: vertical;
+    }
+    .thirdPartyTitleClass {
+      padding-right: 12px;
+      line-height: 18px;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      height: 36px;
+      -webkit-box-orient: vertical;
+    }
+    .thirdPartyCallToActionClass {
+      background-color: #416BC4;
+      color: white;
+      border-radius: 4px;
+      padding: 6px 20px;
+      float: right;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+    .fbDefaultNativeAdWrapper {
+      font-size: 12px;
+      line-height: 14px;
+      margin: 12px 0;
+      height: 36px;
+      vertical-align: top;
+    }
+  </style>
 </head>
+
 <body>
   <h2>Webpage showing different integrations of AN on Web</h2>
   <br><br>
 
-  <h3>300x250 Integration</h3>
+  <h3>300x250 Test Integration</h3>
   <div style="display:none;">
+    <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
     <script type="text/javascript">
       window.ADNW = window.ADNW || {};
       window.ADNW.v60 = window.ADNW.v60 || {};
@@ -32,8 +88,9 @@
 
   <br>
 
-  <h3>320x50 Integration</h3>
+  <h3>320x50 Test Integration</h3>
   <div style="display:none;">
+    <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
     <script type="text/javascript">
       window.ADNW = window.ADNW || {};
       window.ADNW.v60 = window.ADNW.v60 || {};
@@ -54,11 +111,10 @@
     </script>
   </div>
 
-
   <br>
 
-  <h3>Test Integration 1</h3>
-  <div style="display:none;position:relative;">
+  <h3>Native Test Integration</h3>
+  <div style="display:none;">
     <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
     <script type="text/javascript">
       window.ADNW = window.ADNW || {};
@@ -66,50 +122,29 @@
       window.ADNW.v60.slots = window.ADNW.v60.slots || [];
       window.ADNW.v60.slots.push({
         rootElement: document.currentScript.parentElement,
-        placementid: '2354122411472512_2484913318393420',
-        format: '300x250',
-        bidid: '1279976453424501425',
+        placementid: 'IMG_16_9_APP_INSTALL#2354122411472512_2484910865060332',
+        format: '320x50',
         testmode: false,
         onAdLoaded: function(rootElement) {
-          console.log('Audience Network [2354122411472512_2484913318393420] ad loaded');
+          console.log('Audience Network [2354122411472512_2484910865060332] ad loaded');
           rootElement.style.display = 'block';
         },
         onAdError: function(errorCode, errorMessage) {
-          console.log('Audience Network [2354122411472512_2484913318393420] error (' + errorCode + ') ' + errorMessage);
+          console.log('Audience Network [2354122411472512_2484910865060332] error (' + errorCode + ') ' + errorMessage);
         }
       });
     </script>
-  </div>
-
-
-  <br>
-
-  <h3>Test Integration 2</h3>
-  <body>
-    <div style="display:none;position:relative;">
-      <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
-      <script type="text/javascript">
-        window.ADNW = window.ADNW || {};
-        window.ADNW.v60 = window.ADNW.v60 || {};
-        window.ADNW.v60.slots = window.ADNW.v60.slots || [];
-        window.ADNW.v60.slots.push({
-          rootElement: document.currentScript.parentElement,
-          placementid: '2354122411472512_2484911998393552',
-          format: '320x50',
-          bidid: '3434333395770593969',
-          testmode: false,
-          onAdLoaded: function(rootElement) {
-            console.log('Audience Network [2354122411472512_2484911998393552] ad loaded');
-            rootElement.style.display = 'block';
-          },
-          onAdError: function(errorCode, errorMessage) {
-            console.log('Audience Network [2354122411472512_2484911998393552] error (' + errorCode + ') ' + errorMessage);
-          }
-        });
-      </script>
-
+    <div class="thirdPartyRoot">
+      <a class="fbAdLink">
+        <div class="fbAdMedia thirdPartyMediaClass"></div>
+        <div class="fbAdSubtitle thirdPartySubtitleClass"></div>
+        <div class="fbDefaultNativeAdWrapper">
+          <div class="fbAdCallToAction thirdPartyCallToActionClass"></div>
+          <div class="fbAdTitle thirdPartyTitleClass"></div>
+        </div>
+      </a>
     </div>
-  </body>
+  </div>
 
 
 </body>

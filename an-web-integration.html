@@ -57,6 +57,16 @@
       vertical-align: top;
     }
   </style>
+  <script>
+    window.onload=function(){
+      if(parent){
+        var o=document.getElementsByTagName("head")[0];
+        var s=parent.document.getElementsByTagName("style");
+        for(var i=0;i<s.length;i++)
+          o.appendChild(s[i].cloneNode(true));
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -64,7 +74,7 @@
   <br><br>
 
   <h3>300x250 Test Integration</h3>
-  <div style="display:none;">
+  <div style="display:none; position: relative;">
     <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
     <script type="text/javascript">
       window.ADNW = window.ADNW || {};
@@ -89,7 +99,7 @@
   <br>
 
   <h3>320x50 Test Integration</h3>
-  <div style="display:none;">
+  <div style="display:none; position: relative;">
     <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
     <script type="text/javascript">
       window.ADNW = window.ADNW || {};
@@ -114,7 +124,7 @@
   <br>
 
   <h3>Native Test Integration</h3>
-  <div style="display:none;">
+  <div style="display:none; position: relative;">
     <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
     <script type="text/javascript">
       window.ADNW = window.ADNW || {};

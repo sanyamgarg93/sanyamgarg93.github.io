@@ -150,31 +150,77 @@
 
   <br>
 
-  <h3>TEST TEST Integration</h3>
-  <div style="display:none; position: relative;">
-    <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
-    <script type="text/javascript">
-      window.ADNW = window.ADNW || {};
-      window.ADNW.v60 = window.ADNW.v60 || {};
-      window.ADNW.v60.slots = window.ADNW.v60.slots || [];
-      window.ADNW.v60.slots.push({
-        rootElement: document.currentScript.parentElement,
-        placementid: '2354122411472512_2484913318393420',
-        format: '300x250',
-        bidid: '1888376552927375281',
-        bidtimetoken: 'V1_eyJwbGF0Zm9ybV9pZCI6MjA2MTE4NTI0MDc4NTUxNiwib3J0Yl9hdWN0aW9uX2lkIjoiWlU2Tzh3dlJjdXF5UlY0S3dTMkRwdTNqMCIsImJpZF9zb3VyY2UiOjUsImNsdXN0ZXJfaWQiOjEyMywidGVzdCI6dHJ1ZX0=',
-        testmode: false,
-        onAdLoaded: function(element) {
-          console.log('Audience Network [2354122411472512_2484913318393420] ad loaded');
-          element.style.display = 'block';
-        },
-        onAdError: function(errorCode, errorMessage) {
-          console.log('Audience Network [2354122411472512_2484913318393420] error (' + errorCode + ') ' + errorMessage);
+  <h3>IX TEST Integration 1</h3>
+  <html>
+    <head>
+      <script>
+        window.onload=function(){
+          if(parent){
+            var o=document.getElementsByTagName("head")[0];
+            var s=parent.document.getElementsByTagName("style");
+            for(var i=0;i<s.length;i++)
+              o.appendChild(s[i].cloneNode(true));
+          }
         }
-      });
-    </script>
-  </div>
+      </script>
+    </head>
+    <body>
+      <div style="display:none; position: relative;">
+        <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
+        <script type="text/javascript">
+          window.ADNW = window.ADNW || {};
+          window.ADNW.v60 = window.ADNW.v60 || {};
+          window.ADNW.v60.slots = window.ADNW.v60.slots || [];
+          window.ADNW.v60.slots.push({
+            rootElement: document.currentScript.parentElement,
+            placementid: 2354122411472512_2484910865060332,
+            format: "native",
+            bidid: F7BZA9u6mCUAjPMCqnB6WykjT,
+            testmode: false,
+            onAdLoaded: function(element) {
+              console.log("Ad loaded");
+              element.style.display = "block";
+            },
+            onAdError: function(errorCode, errorMessage) {
+              console.log("Audience Network error (" + errorCode + ") " + errorMessage);
+            }
+          });
+        </script>
+        <style></style>
+        <div></div>
+      </div>
+    </body>
+  </html>
 
+  <br>
 
+  <h3>IX TEST Integration 2</h3>
+  <html>
+    <body>
+      <div style="display:none; position: relative;">
+        <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
+        <script type="text/javascript">
+          window.ADNW = window.ADNW || {};
+          window.ADNW.v60 = window.ADNW.v60 || {};
+          window.ADNW.v60.slots = window.ADNW.v60.slots || [];
+          window.ADNW.v60.slots.push({
+            rootElement: document.currentScript.parentElement,
+            placementid: '2354122411472512_2484913318393420',
+            format: '300x250',
+            bidid: '1454584015976256177',
+            bidtimetoken: 'V1_eyJwbGF0Zm9ybV9pZCI6MjA2MTE4NTI0MDc4NTUxNiwib3J0Yl9hdWN0aW9uX2lkIjoiRjdCWkE5dTZtQ1VBalBNQ3FuQjZXeWtqVCIsImJpZF9zb3VyY2UiOjEwLCJjbHVzdGVyX2lkIjo0M30=',
+            testmode: false,
+            onAdLoaded: function(element) {
+              console.log('Audience Network [2354122411472512_2484913318393420] ad loaded');
+              element.style.display = 'block';
+            },
+            onAdError: function(errorCode, errorMessage) {
+              console.log('Audience Network [2354122411472512_2484913318393420] error (' + errorCode + ') ' + errorMessage);
+            }
+          });
+        </script>
+      </div>
+    </body>
+  </html>
 </body>
 </html>

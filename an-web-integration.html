@@ -2,161 +2,17 @@
 <html>
 <head>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <!--
-  <style>
-    .thirdPartyRoot {
-      background-color: white;
-      color: #444;
-      border: 1px solid #ccc;
-      border-left: 0;
-      border-right: 0;
-      font-family: sans-serif;
-      font-size: 14px;
-      line-height: 16px;
-      width: 320px;
-      text-align: left;
-      position: relative;
-    }
-    .thirdPartyMediaClass {
-      width: 320px;
-      height: 168px;
-      margin: 12px 0;
-    }
-    .thirdPartySubtitleClass {
-      font-size: 18px;
-      -webkit-line-clamp: 1;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      height: 16px;
-      -webkit-box-orient: vertical;
-    }
-    .thirdPartyTitleClass {
-      padding-right: 12px;
-      line-height: 18px;
-      -webkit-line-clamp: 2;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      height: 36px;
-      -webkit-box-orient: vertical;
-    }
-    .thirdPartyCallToActionClass {
-      background-color: #416BC4;
-      color: white;
-      border-radius: 4px;
-      padding: 6px 20px;
-      float: right;
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 11px;
-    }
-    .fbDefaultNativeAdWrapper {
-      font-size: 12px;
-      line-height: 14px;
-      margin: 12px 0;
-      height: 36px;
-      vertical-align: top;
-    }
-  </style>
-  -->
 </head>
 
-<body>
-  <h2>Webpage showing different integrations of AN on Web</h2>
-  <br><br>
+  <body>
+    <h2>Webpage showing different integrations of AN on Web</h2>
+    <br>
 
-  <h3>300x250 Test Integration</h3>
-  <div style="display:none;">
-    <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
-    <script type="text/javascript">
-      window.ADNW = window.ADNW || {};
-      window.ADNW.v60 = window.ADNW.v60 || {};
-      window.ADNW.v60.slots = window.ADNW.v60.slots || [];
-      window.ADNW.v60.slots.push({
-        rootElement: document.currentScript.parentElement,
-        placementid: 'IMG_16_9_APP_INSTALL#2354122411472512_2484913841726701',
-        format: '300x250',
-        testmode: false,
-        onAdLoaded: function(rootElement) {
-          console.log('Audience Network [2354122411472512_2484913841726701] ad loaded');
-          rootElement.style.display = 'block';
-        },
-        onAdError: function(errorCode, errorMessage) {
-          console.log('Audience Network [2354122411472512_2484913841726701] error (' + errorCode + ') ' + errorMessage);
-        }
-      });
-    </script>
-  </div>
+    <h1>IX Native</h1>
+    <html><head><script type="text/javascript">  window.onload = function() {    if (parent) {      var oHead = document.getElementsByTagName("head")[0];      var arrStyleSheets = [].slice.call(parent.document.getElementsByTagName("style"));      for (var i = 0; i < arrStyleSheets.length; i++)        oHead.appendChild(arrStyleSheets[i].cloneNode(true));    }  }</script></head><body><div style="display:none; position: relative;"><script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script><script type="text/javascript">window.ADNW = window.ADNW || {};window.ADNW.v60 = window.ADNW.v60 || {};window.ADNW.v60.slots = window.ADNW.v60.slots || [];window.ADNW.v60.slots.push({rootElement: document.currentScript.parentElement,placementid: '2354122411472512_2484910865060332',format: 'native', bidid: '7135801785784128177', bidtimetoken: 'V1_eyJwbGF0Zm9ybV9pZCI6MjA2MTE4NTI0MDc4NTUxNiwib3J0Yl9hdWN0aW9uX2lkIjoiZmEwWUFaVXBrZ0NpcHVFSWVqWGpSZGRoMSIsImJpZF9zb3VyY2UiOjEwLCJjbHVzdGVyX2lkIjo0M30=', testmode: false,onAdLoaded: function(element) {console.log('Audience Network [2354122411472512_2484910865060332] ad loaded');element.style.display = 'block';},onAdError: function(errorCode, errorMessage) {console.log('Audience Network [2354122411472512_2484910865060332] error (' + errorCode + ') ' + errorMessage);}});</script><style>.thirdPartyRoot {background-color: white;color: #444;border: 1px solid #ccc;border-left: 0;border-right: 0;font-family: sans-serif;font-size: 14px;line-height: 16px;width: 320px;text-align: left;position: relative;}.thirdPartyMediaClass {width: 320px;height: 168px;margin: 12px 0;}.thirdPartySubtitleClass {font-size: 18px;-webkit-line-clamp: 1;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;height: 16px;-webkit-box-orient: vertical;}.thirdPartyTitleClass {padding-right: 12px;line-height: 18px;-webkit-line-clamp: 2;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;height: 36px;-webkit-box-orient: vertical;}.thirdPartyCallToActionClass {background-color: #416BC4;color: white;border-radius: 4px;padding: 6px 20px;float: right;text-align: center;text-transform: uppercase;font-size: 11px;}.fbDefaultNativeAdWrapper {font-size: 12px;line-height: 14px;margin: 12px 0;height: 36px;vertical-align: top;}</style><div class='thirdPartyRoot'><a class='fbAdLink'><div class='fbAdMedia thirdPartyMediaClass'></div><div class='fbAdSubtitle thirdPartySubtitleClass'></div><div class='fbDefaultNativeAdWrapper'><div class='fbAdCallToAction thirdPartyCallToActionClass'></div><div class='fbAdTitle thirdPartyTitleClass'></div></div></a></div></div></body></html>
 
-  <br>
-
-  <h3>320x50 Test Integration</h3>
-  <div style="display:none;">
-    <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
-    <script type="text/javascript">
-      window.ADNW = window.ADNW || {};
-      window.ADNW.v60 = window.ADNW.v60 || {};
-      window.ADNW.v60.slots = window.ADNW.v60.slots || [];
-      window.ADNW.v60.slots.push({
-        rootElement: document.currentScript.parentElement,
-        placementid: 'IMG_16_9_APP_INSTALL#2354122411472512_2484911998393552',
-        format: '320x50',
-        testmode: false,
-        onAdLoaded: function(rootElement) {
-          console.log('Audience Network [2354122411472512_2484911998393552] ad loaded');
-          rootElement.style.display = 'block';
-        },
-        onAdError: function(errorCode, errorMessage) {
-          console.log('Audience Network [2354122411472512_2484911998393552] error (' + errorCode + ') ' + errorMessage);
-        }
-      });
-    </script>
-  </div>
-
-  <br>
-
-  <h3>Native Test Integration</h3>
-  <div style="display:none;">
-    <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script>
-    <script type="text/javascript">
-      window.ADNW = window.ADNW || {};
-      window.ADNW.v60 = window.ADNW.v60 || {};
-      window.ADNW.v60.slots = window.ADNW.v60.slots || [];
-      window.ADNW.v60.slots.push({
-        rootElement: document.currentScript.parentElement,
-        placementid: 'IMG_16_9_APP_INSTALL#2354122411472512_2484910865060332',
-        format: 'native',
-        testmode: false,
-        onAdLoaded: function(rootElement) {
-          console.log('Audience Network [2354122411472512_2484910865060332] ad loaded');
-          rootElement.style.display = 'block';
-        },
-        onAdError: function(errorCode, errorMessage) {
-          console.log('Audience Network [2354122411472512_2484910865060332] error (' + errorCode + ') ' + errorMessage);
-        }
-      });
-    </script>
-    <div class="thirdPartyRoot">
-      <a class="fbAdLink">
-        <div class="fbAdMedia thirdPartyMediaClass"></div>
-        <div class="fbAdSubtitle thirdPartySubtitleClass"></div>
-        <div class="fbDefaultNativeAdWrapper">
-          <div class="fbAdCallToAction thirdPartyCallToActionClass"></div>
-          <div class="fbAdTitle thirdPartyTitleClass"></div>
-        </div>
-      </a>
-    </div>
-  </div>
-
-
-  <br>
-
-  <h1>IX Banner</h1>
-  <html><head></head><body><div style="display:none; position: relative;"><script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script><script type="text/javascript">window.ADNW = window.ADNW || {};window.ADNW.v60 = window.ADNW.v60 || {};window.ADNW.v60.slots = window.ADNW.v60.slots || [];window.ADNW.v60.slots.push({rootElement: document.currentScript.parentElement,placementid: '2354122411472512_2484911998393552',format: '320x50', bidid: '7070749271626273457', bidtimetoken: 'V1_eyJwbGF0Zm9ybV9pZCI6MjA2MTE4NTI0MDc4NTUxNiwib3J0Yl9hdWN0aW9uX2lkIjoiOUpPUHJtN1dVZ1NpTkY5S1JucTl0YmlkMSIsImJpZF9zb3VyY2UiOjEwLCJjbHVzdGVyX2lkIjo0M30=', testmode: false,onAdLoaded: function(element) {console.log('Audience Network [2354122411472512_2484911998393552] ad loaded');element.style.display = 'block';},onAdError: function(errorCode, errorMessage) {console.log('Audience Network [2354122411472512_2484911998393552] error (' + errorCode + ') ' + errorMessage);}});</script></div></body></html>
-
-  <h1>IX Fullwidth</h1>
-  <html><head></head><body><div style="display:none; position: relative;"><script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script><script type="text/javascript">window.ADNW = window.ADNW || {};window.ADNW.v60 = window.ADNW.v60 || {};window.ADNW.v60.slots = window.ADNW.v60.slots || [];window.ADNW.v60.slots.push({rootElement: document.currentScript.parentElement,placementid: '2354122411472512_2484913841726701',format: 'fullwidth', bidid: '1984298282489008817', bidtimetoken: 'V1_eyJwbGF0Zm9ybV9pZCI6MjA2MTE4NTI0MDc4NTUxNiwib3J0Yl9hdWN0aW9uX2lkIjoiOUpPUHJtN1dVZ1NpTkY5S1JucTl0YmlkMSIsImJpZF9zb3VyY2UiOjEwLCJjbHVzdGVyX2lkIjo0M30=', testmode: false,onAdLoaded: function(element) {console.log('Audience Network [2354122411472512_2484913841726701] ad loaded');element.style.display = 'block';},onAdError: function(errorCode, errorMessage) {console.log('Audience Network [2354122411472512_2484913841726701] error (' + errorCode + ') ' + errorMessage);}});</script></div></body></html>
+    <h1>IX Fullwidth</h1>
+    <html><head></head><body><div style="display:none; position: relative;"><script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw60-tag.js" async></script><script type="text/javascript">window.ADNW = window.ADNW || {};window.ADNW.v60 = window.ADNW.v60 || {};window.ADNW.v60.slots = window.ADNW.v60.slots || [];window.ADNW.v60.slots.push({rootElement: document.currentScript.parentElement,placementid: '2354122411472512_2484913841726701',format: 'fullwidth', bidid: '1644927597628904113', bidtimetoken: 'V1_eyJwbGF0Zm9ybV9pZCI6MjA2MTE4NTI0MDc4NTUxNiwib3J0Yl9hdWN0aW9uX2lkIjoiZmEwWUFaVXBrZ0NpcHVFSWVqWGpSZGRoMSIsImJpZF9zb3VyY2UiOjEwLCJjbHVzdGVyX2lkIjo0M30=', testmode: false,onAdLoaded: function(element) {console.log('Audience Network [2354122411472512_2484913841726701] ad loaded');element.style.display = 'block';},onAdError: function(errorCode, errorMessage) {console.log('Audience Network [2354122411472512_2484913841726701] error (' + errorCode + ') ' + errorMessage);}});</script></div></body></html>
 
   </body>
 </html>
